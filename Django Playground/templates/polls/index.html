@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+
+<h2>Questions</h2>
+
+{% if latest_questions %}
+    <ul>
+        {% for question in latest_questions %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ question.question_text }}</h5>
+                    <a href="{% url 'polls:detail' question.id %}" class="btn-sm btn-primary">Vote</a>
+                    <a href="{% url 'polls:results' question.id %}" class="btn-sm btn-secondary">Results</a>
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No questions are available.</p>
+{% endif %}
+
+{% endblock %}
