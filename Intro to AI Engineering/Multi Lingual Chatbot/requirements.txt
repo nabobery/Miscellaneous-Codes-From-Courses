@@ -1,5 +1,0 @@
-google-generativeai==0.8.3
-grpcio-status==1.68.1
-pipdeptree==2.24.0
-streamlit==1.41.1
-deep-translator==1.11.4
